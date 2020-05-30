@@ -22,6 +22,7 @@ public class UserRepositoryImpl extends BaseJdbcRepository implements UserReposi
   private static final String DELETE_BY_ID = "delete from user where id=?";
   private static final String SELECT_BY_ID = "select * from user where id = ?";
   private static final String SELECT_ALL = "select * from user";
+  private static final String SELECT_BY_EMAIL = "select * from user where email = ?";
 
   private static final String TABLE_NAME = "user";
   private final JdbcTemplate jdbcTemplate;
@@ -34,7 +35,14 @@ public class UserRepositoryImpl extends BaseJdbcRepository implements UserReposi
 
   @Override
   public Optional<User> getById(Long modelId) {
+
     return retrieveEntity(userMapper, SELECT_BY_ID, modelId);
+  }
+
+  @Override
+  public Optional<User> getByEmail(String email) {
+
+    return retrieveEntity(userMapper, SELECT_BY_EMAIL, email);
   }
 
   @Override

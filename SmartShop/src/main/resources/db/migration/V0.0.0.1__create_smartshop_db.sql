@@ -5,7 +5,7 @@ use smart_shop;
 CREATE TABLE smart_shop.category (
   id bigint auto_increment primary key,
   name varchar(255) NOT NULL,
-  details text NOT NULL
+  parent INT DEFAULT NULL
 );
 
 CREATE TABLE smart_shop.contact (

@@ -60,4 +60,13 @@ public class UserServiceImpl implements UserService {
     getById(userId);
     userRepository.delete(userId);
   }
+
+  @Override
+  public User getUserByEmail(String email) {
+    log.info("get user by email {}", email);
+
+    Optional<User> optionalUser = userRepository.getByEmail(email);
+
+    return optionalUser.orElseThrow(() -> new ResourceNotFoundException("user not found with email "+ email));
+  }
 }

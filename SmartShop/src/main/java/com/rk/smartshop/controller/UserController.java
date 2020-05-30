@@ -67,4 +67,12 @@ public class UserController {
     return userService.getAllUsers();
   }
 
+  @ApiOperation(value = "Get user by user id", response = User.class)
+  @GetMapping("/email/{email}")
+  public User getUser(@PathVariable("email") String email) {
+
+    return userService.getUserByEmail(email);
+  }
+
+
 }

@@ -7,5 +7,5 @@ public class Category {
 
   private Long id;
   private String name;
-  private String details;
+  private int parent;
 }

@@ -15,7 +15,7 @@ public class LocationMapper implements RowMapper<Location> {
 
     Location location = new Location();
     location.setId(resultSet.getLong("id"));
-    location.setLocationName(resultSet.getString("name"));
+    location.setName(resultSet.getString("name"));
 
     return location;
   }

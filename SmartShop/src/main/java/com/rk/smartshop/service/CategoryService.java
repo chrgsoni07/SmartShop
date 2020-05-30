@@ -2,6 +2,7 @@ package com.rk.smartshop.service;
 
 import com.rk.smartshop.model.Category;
 import java.util.List;
+import java.util.Map;
 
 public interface CategoryService {
 
@@ -14,4 +15,11 @@ public interface CategoryService {
   List<Category> getAllCategories();
 
   Category getById(Long categoryId);
+
+  List<Category> getAllSubCategories(Long id);
+
+  List<Category> getAllRootCategories();
+
+  List getCategoryMenu();
+
 }

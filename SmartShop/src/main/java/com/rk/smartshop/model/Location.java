@@ -6,6 +6,6 @@ import lombok.Data;
 public class Location {
 
   private Long id;
-  private String locationName;
+  private String name;
 
 }

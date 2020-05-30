@@ -62,7 +62,7 @@ public class LocationController {
 
   @ApiOperation(value = "Get all categories categories for of product.", response = ResponseEntity.class)
   @GetMapping("/all")
-  public List<Location> getCategories() {
+  public List<Location> getAllLocation() {
 
     return locationService.getAllLocation();
   }

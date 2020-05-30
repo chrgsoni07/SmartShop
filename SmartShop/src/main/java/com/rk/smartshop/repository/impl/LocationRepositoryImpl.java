@@ -46,7 +46,7 @@ public class LocationRepositoryImpl extends BaseJdbcRepository implements Locati
   @Override
   public Integer update(Location model, Long modelId) {
 
-    return updateOrInsertEntity(UPDATE_QUERY, model.getLocationName(), modelId);
+    return updateOrInsertEntity(UPDATE_QUERY, model.getName(), modelId);
   }
 
   @Override
@@ -60,7 +60,7 @@ public class LocationRepositoryImpl extends BaseJdbcRepository implements Locati
 
     Map<String, Object> params = new HashMap<>();
     params.put("id", model.getId());
-    params.put("name", model.getLocationName());
+    params.put("name", model.getName());
 
     return insertEntityAndReturnKey(params);
   }
